@@ -2,4 +2,4 @@
 for alphabet in range(97, 123):
     if alphabet == 101 or alphabet == 113:
         continue
-    print(chr(alphabet), end="")
+    print("{}".format(chr(alphabet)), end="")

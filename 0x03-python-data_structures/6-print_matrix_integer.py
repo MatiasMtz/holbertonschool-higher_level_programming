@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+def print_matrix_integer(matrix=[[]]):
+    for i in matrix:
+        for number in i:
+            if number != i[-1]:
+                print(f"{number:d}", end=" ")
+            else:
+                print(f"{number:d}")

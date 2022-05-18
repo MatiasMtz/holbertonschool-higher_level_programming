@@ -22,9 +22,9 @@ class Rectangle:
         Args:
         rect_1 (Rectangle): first object to compare
         rect_2 (Rectangle): second object to compare"""
-        if not isinstance(rect_1, Rectangle):
+        if type(rect_1) != Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
+        if type(rect_2) != Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         rect1Area = rect_1.area()
         rect2Area = rect_2.area()
@@ -104,5 +104,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Method that returns a new Rectangle instance"""
+        """Method that returns a new Rectangle instance
+        Args:
+        size (int): width == hewight == size"""
         return cls(size, size)

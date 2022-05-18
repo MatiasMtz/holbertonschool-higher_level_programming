@@ -16,23 +16,6 @@ class Rectangle:
         self.__height = height
         Rectangle.number_of_instances += 1
 
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Static method that returns the biggest rectangle based on area
-        Args:
-        rect_1 (Rectangle): first object to compare
-        rect_2 (Rectangle): second object to compare"""
-        if type(rect_1) != Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) != Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        rect1Area = rect_1.area()
-        rect2Area = rect_2.area()
-        if rect1Area == rect2Area or rect1Area > rect2Area:
-            return rect_1
-        if rect1Area < rect2Area:
-            return rect_2
-
     @property
     def width(self):
         """Defines a private instance: Width"""
@@ -101,6 +84,23 @@ class Rectangle:
         """Method to print when an instance of Rectangle is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Static method that returns the biggest rectangle based on area
+        Args:
+        rect_1 (Rectangle): first object to compare
+        rect_2 (Rectangle): second object to compare"""
+        if type(rect_1) != Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) != Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        rect1Area = rect_1.area()
+        rect2Area = rect_2.area()
+        if rect1Area == rect2Area or rect1Area > rect2Area:
+            return rect_1
+        if rect1Area < rect2Area:
+            return rect_2
 
     @classmethod
     def square(cls, size=0):

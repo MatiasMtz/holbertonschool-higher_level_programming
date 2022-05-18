@@ -82,8 +82,8 @@ class Rectangle:
 
     def __del__(self):
         """Method to print when an instance of Rectangle is deleted"""
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -97,7 +97,7 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         rect1Area = rect_1.area()
         rect2Area = rect_2.area()
-        if rect1Area == rect2Area or rect1Area > rect2Area:
+        if rect1Area >= rect2Area:
             return rect_1
         if rect1Area < rect2Area:
             return rect_2
@@ -107,5 +107,4 @@ class Rectangle:
         """Method that returns a new Rectangle instance
         Args:
         size (int): width == hewight == size"""
-        cls.number_of_instances += 1
-        return Rectangle(size, size)
+        return cls(size, size)

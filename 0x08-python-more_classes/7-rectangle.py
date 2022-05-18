@@ -12,8 +12,8 @@ class Rectangle:
         Args:
         width (int): width of Rectangle once instance is created
         height (int): height of Rectangle once instance is created"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -78,7 +78,7 @@ class Rectangle:
 
     def __repr__(self):
         """Method to represent Rectangle class object as machine language"""
-        return f'(Rectangle({self.__width}, {self.__height}))'
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """Method to print when an instance of Rectangle is deleted"""

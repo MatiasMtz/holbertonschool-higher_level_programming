@@ -14,6 +14,7 @@ def safeSpot(queenPosition, queenN):
             return False
     return True
 
+
 def locateQueens(queenPosition, queenNumber):
     """Prints the list with the Queens positions
     Args:
@@ -23,6 +24,7 @@ def locateQueens(queenPosition, queenNumber):
     for i in range(queenNumber):
         queens.append([i, queenPosition[i]])
     print(queens)
+
 
 def Queen(queenPosition, queenNumber):
     """Backtracking algorithm
@@ -39,12 +41,15 @@ def Queen(queenPosition, queenNumber):
             if queenNumber is not len(queenPosition):
                 Queen(queenPosition, queenNumber + 1)
 
+
 def solveNQueen(size):
     """Function that applies backtracking algorithm
     Args:
         size: size of the chessboard"""
     queenPosition = [-1 for i in range(size)]
     Queen(queenPosition, 0)
+
+
 if __name__ == '__main__':
     import sys
     if len(sys.argv) == 1 or len(sys.argv) > 2:
@@ -52,7 +57,7 @@ if __name__ == '__main__':
         sys.exit(1)
     try:
         size = int(sys.argv[1])
-    except:
+    except TypeError:
         print("N must be a number")
         sys.exit(1)
     if size < 4:

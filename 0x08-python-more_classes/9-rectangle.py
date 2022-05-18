@@ -107,4 +107,5 @@ class Rectangle:
         """Method that returns a new Rectangle instance
         Args:
         size (int): width == hewight == size"""
-        return cls(size, size)
+        cls.number_of_instances += 1
+        return Rectangle(size, size)

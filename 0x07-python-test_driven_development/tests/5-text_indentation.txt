@@ -1,0 +1,33 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(" Holberton.School?")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(98)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("                Spaces test                 ")
+Spaces test
+
+>>> text_indentation("	Tabs test	")
+Tabs test
+
+>>> text_indentation("HolbertonSchool.")
+HolbertonSchool.
+<BLANKLINE>

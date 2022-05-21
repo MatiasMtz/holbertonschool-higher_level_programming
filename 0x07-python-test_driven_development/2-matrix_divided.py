@@ -39,4 +39,3 @@ of integers/floats")
     for row in matrix:
         result.append(list(map(lambda x: round(x / div, 2), row)))
     return result
-

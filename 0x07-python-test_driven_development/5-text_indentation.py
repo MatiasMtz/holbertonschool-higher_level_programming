@@ -1,19 +1,26 @@
 #!/usr/bin/python3
-def text_indentation(text):
+"""Module that prints a text with 2 new lines after each of
+these characters: ., ? and :"""
 
+
+def text_indentation(text):
+    """
+    Args:
+    text (str): String that will be splitted
+    """
     if type(text) != str:
         raise TypeError("text must be a string")
 
-    l = 0
+    i = 0
     text = text.strip()
-    while l < len(text):
-        print(text[l], end='')
-        if text[l] == '.' or text[l] == '?' or text[l] == ':':
+    while i < len(text):
+        print(text[i], end='')
+        if text[i] == '.' or text[i] == '?' or text[i] == ':':
             print('\n')
-            if l == len(text) - 1:
+            if i == len(text) - 1:
                 break
-            if text[l + 1] == ' ':
-                l += 1
-            while text[l] == ' ' and text[l + 1] == ' ' and l + 1 < len(text):
-                l += 1
-        l += 1
+            if text[i + 1] == ' ':
+                i += 1
+            while text[i] == ' ' and text[i + 1] == ' ' and i + 1 < len(text):
+                i += 1
+        i += 1

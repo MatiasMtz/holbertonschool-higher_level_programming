@@ -1,6 +1,12 @@
 #!/usr/bin/python3
-def print_square(size):
+"""Module that prints a square"""
 
+
+def print_square(size):
+    """
+    Args:
+    size (int): large of the square that will be printed
+    """
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:

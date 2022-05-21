@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-def say_my_name(first_name, last_name=""):
+"""Module that prints My name is <first name> <last name>"""
 
+
+def say_my_name(first_name, last_name=""):
+    """
+    Args:
+    first_name (str): First parameter to print
+    last_name (str): Second parameter to print
+    """
     if type(first_name) != str:
         raise TypeError("first_name must be a string")
     elif type(last_name) != str:

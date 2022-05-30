@@ -1,19 +1,27 @@
 >>> MyList = __import__('1-my_list').MyList
 
->>> print(MyList.print_sorted([1, 2, 3, 5, 4]))
+>>> my_list = MyList()
+
+>>> my_list = MyList([1, 2, 3, 5, 4])
+>>> my_list
 [1, 2, 3, 4, 5]
 
->>> print(MyList.print_sorted([-1, -2, -4, 0, 1]))
+>>> my_list = MyList([-1, -2, -4, 0, 1])
+>>> my_list
 [-4, -2, -1, 0, 1]
 
->>> print(MyList.print_sorted([-1, 0, 1.2, 5.5, 3.7]))
+>>> my_list = MyList([-1, 0, 1.2, 5.5, 3.7])
+>>> my_list
 [-1, 0, 1.2, 3.7, 5.5]
 
->>> print(MyList.print_sorted([None]))
+>>> my_list = MyList([None])
+>>> my_list
 [None]
 
->>> print(MyList.print_sorted([]))
+>>> my_list = MyList([])
+>>> my_list
 []
 
->>> print(MyList.print_sorted(['B', 'E', 'Y', 'T', 'T']))
+>>> my_list = MyList(['B', 'E', 'Y', 'T', 'T'])
+>>> my_list
 ['B', 'E', 'T', 'T', 'Y']

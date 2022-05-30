@@ -31,7 +31,7 @@ True
 
 >>> my_list = MyList()
 >>> my_list.append(1)
->>> my_list
+>>> my_list.print_sorted()
 [1]
 
 >>> my_list.append(5)
@@ -44,12 +44,7 @@ True
 >>> my_list.print_sorted()
 [None]
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(3)
->>> my_list.append(2)
->>> my_list.append(5)
->>> my_list.append(4)
+>>> my_list = MyList([1, 2, 3, 5, 4])
 >>> my_list.print_sorted(5)
 Traceback (most recent call last):
 TypeError: print_sorted() takes 1 positional argument but 2 were given

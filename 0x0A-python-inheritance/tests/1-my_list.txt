@@ -1,33 +1,45 @@
 >>> MyList = __import__('1-my_list').MyList
 
 >>> my_list = MyList()
+>>> my_list.append(32)
+>>> my_list.append(12)
+>>> my_list.append(16)
+>>> my_list.append(20)
+>>> my_list.append(42)
+>>> my_list.print_sorted()
+[12, 16, 20, 32, 42]
 
->>> my_list = MyList([1, 2, 3, 5, 4])
-
->>> my_list
-[1, 2, 3, 4, 5]
-
->>> my_list = MyList([-1, -2, -4, 0, 1])
-
->>> my_list
-[-4, -2, -1, 0, 1]
-
->>> my_list = MyList([-1, 0, 1.2, 5.5, 3.7])
-
->>> my_list
-[-1, 0, 1.2, 3.7, 5.5]
-
->>> my_list = MyList([None])
-
->>> my_list
-[None]
-
->>> my_list = MyList([])
-
->>> my_list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
 []
 
->>> my_list = MyList(['B', 'E', 'Y', 'T', 'T'])
+>>> my_list = MyList()
+>>> isinstance(my_list, MyList)
+True
 
+>>> my_list = MyList()
+>>> type(my_list) == MyList
+True
+
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+>>> my_list.append(-3)
+>>> my_list.print_sorted()
+[-3, 1, 2, 3]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
 >>> my_list
-['B', 'E', 'T', 'T', 'Y']
+[1]
+
+>>> my_list.append(45)
+>>> my_list.append(20)
+>>> print(my_list)
+[1, 45, 20]
+
+>>> my_list = MyList()
+>>> my_list.append(None)
+>>> my_list.print_sorted()
+[None]

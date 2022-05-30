@@ -1,0 +1,79 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+>>> bg.integer_validator("distance", None)
+Traceback (most recent call last):
+TypeError: distance must be an integer
+
+>>> bg.integer_validator("distance")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator(1,2,3)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg = BaseGeometry(2)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(123, 'Hello world!!')
+Traceback (most recent call last):
+TypeError: 123 must be an integer
+
+>>> bg = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator('None', None)
+Traceback (most recent call last):
+TypeError: None must be an integer
+
+>>> bg.integer_validator('tuple', (23, 4))
+Traceback (most recent call last):
+TypeError: tuple must be an integer
+
+>>> bg.integer_validator('list', [1, 2 ,3])
+Traceback (most recent call last):
+TypeError: list must be an integer
+
+>>> bg.integer_validator('float', 3.23)
+Traceback (most recent call last):
+TypeError: float must be an integer
+
+>>> bg.integer_validator('set', {1, 2, 3})
+Traceback (most recent call last):
+TypeError: set must be an integer
+
+>>> bg.integer_validator('dict', {'a': 1, 'b': 2})
+Traceback (most recent call last):
+TypeError: dict must be an integer
+
+>>> bg.integer_validator('bool', True)
+Traceback (most recent call last):
+TypeError: bool must be an integer

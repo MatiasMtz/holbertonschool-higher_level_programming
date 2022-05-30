@@ -3,25 +3,31 @@
 >>> my_list = MyList()
 
 >>> my_list = MyList([1, 2, 3, 5, 4])
+
 >>> my_list
 [1, 2, 3, 4, 5]
 
 >>> my_list = MyList([-1, -2, -4, 0, 1])
+
 >>> my_list
 [-4, -2, -1, 0, 1]
 
 >>> my_list = MyList([-1, 0, 1.2, 5.5, 3.7])
+
 >>> my_list
 [-1, 0, 1.2, 3.7, 5.5]
 
 >>> my_list = MyList([None])
+
 >>> my_list
 [None]
 
 >>> my_list = MyList([])
+
 >>> my_list
 []
 
 >>> my_list = MyList(['B', 'E', 'Y', 'T', 'T'])
+
 >>> my_list
 ['B', 'E', 'T', 'T', 'Y']

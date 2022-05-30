@@ -1,51 +1,27 @@
 >>> MyList = __import__('1-my_list').MyList
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(3)
->>> my_list.append(2)
->>> my_list.append(5)
->>> my_list.append(4)
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
-
->>> my_list = MyList()
->>> my_list.print_sorted()
+>>> list = MyList()
+>>> list.print_sorted()
 []
 
->>> my_list = MyList()
->>> isinstance(my_list, MyList)
-True
+>>> list.append(3)
+>>> list.append(2)
+>>> list.append(1)
+>>> print(list)
+[3, 2, 1]
 
->>> my_list = MyList()
->>> type(my_list) == MyList
-True
-
->>> my_list = MyList([3, 1, 2])
->>> my_list.print_sorted()
+>>> list.print_sorted()
 [1, 2, 3]
 
->>> my_list.append(-3)
->>> my_list.print_sorted()
-[-3, 1, 2, 3]
+>>> list.append(-12)
+>>> list.append(-1)
+>>> print(list)
+[3, 2, 1, -12, -1]
+>>> list.print_sorted()
+[-12, -1, 1, 2, 3]
+>>> print(list)
+[3, 2, 1, -12, -1]
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list
-[1]
-
->>> my_list.append(5)
->>> my_list.append(3)
->>> my_list.print_sorted()
-[1, 3, 5]
-
->>> my_list = MyList()
->>> my_list.append(None)
->>> my_list.print_sorted()
-[None]
-
->>> my_list = MyList([1, 2, 3, 5, 4])
->>> my_list.print_sorted(5)
+>>> list.print_sorted(1)
 Traceback (most recent call last):
-...
 TypeError: print_sorted() takes 1 positional argument but 2 were given

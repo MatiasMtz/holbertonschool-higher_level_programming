@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""MyInt class"""
+"""MyInt class which has == and != operators inverted"""
 
 
 class MyInt(int):

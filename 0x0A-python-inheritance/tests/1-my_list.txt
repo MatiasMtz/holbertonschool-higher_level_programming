@@ -14,3 +14,6 @@
 
 >>> print(MyList.print_sorted([]))
 []
+
+>>> print(MyList.print_sorted(['B', 'E', 'Y', 'T', 'T']))
+['B', 'E', 'T', 'T', 'Y']

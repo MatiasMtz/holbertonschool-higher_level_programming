@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a rectangle class"""
+"""Defines a Rectangle class"""
 from models.base import Base
 
 class Rectangle(Base):
@@ -137,7 +137,7 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        """Function that returns the dict representation of a Rectangle"""
+        """Function that returns the dict representation of Rectangle"""
         dcty = {'id': self.id, 'width': self.width, 'height': self.height,
                       'x': self.x, 'y': self.y}
         return dcty

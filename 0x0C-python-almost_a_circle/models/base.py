@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""Base class of all other classes in this project."""
+"""Base class of all other classes in this project"""
 import json
 
 
 class Base:
-    """"""
+    """Class that voids duplicating the same code"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """"""
+        """Instantiation of Base attributes
+        Args:
+        id (int): Object identification"""
         if id is not None:
             self.id = id
         else:
@@ -17,14 +19,18 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Function that returns the JSON representation of an object"""
+        """Function that returns the JSON representation of an object
+        Args:
+        list_dictionaries (list): List of dictionaries"""
         if list_dictionaries is None or list_dictionaries == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """"""
+        """Function that writes the JSON string representation of list_objs
+        Args:
+        list_objs (list): List of instances who inherits of Base"""
         objectList = []
         filename = cls.__name__ + ".json"
         if list_objs is not None:
@@ -35,6 +41,9 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Function that returns the list of the JSON string representation
+        Args:
+        json_string (string): Represents a list of dictionaries"""
         aDict = []
         if json_string is None or len(json_string) == 0:
             return aDict
@@ -43,7 +52,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """"""
+        """Function that returns an instance with all attributes already set
+        Args:
+        dictionary (dict): can be treated as double pointer to a dictionary"""
         if cls.__name__ == "Rectangle":
             newInstance = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -53,7 +64,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """"""
+        """Function that returns a list of instances
+        Args:
+        cls: current class using this method"""
         instanceList = []
         filename = cls.__name__ + ".json"
         with open(filename, "r") as file:

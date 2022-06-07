@@ -69,8 +69,11 @@ class Base:
         cls: current class using this method"""
         instanceList = []
         filename = cls.__name__ + ".json"
-        with open(filename, "r") as file:
-            instanceList = cls.from_json_string(file.read())
-        for obj, value in enumerate(instanceList):
-            instanceList[obj] = cls.create(**instanceList[obj])
+        try:
+            with open(filename, "r") as file:
+                instanceList = cls.from_json_string(file.read())
+                for obj, value in enumerate(instanceList):
+                    instanceList[obj] = cls.create(**instanceList[obj])
+        except FileNotFoundError:
+            pass
         return instanceList

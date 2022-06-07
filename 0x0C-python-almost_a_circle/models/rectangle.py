@@ -2,6 +2,7 @@
 """Defines a Rectangle class"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Class that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -139,5 +140,5 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Function that returns the dict representation of Rectangle"""
         dcty = {'id': self.id, 'width': self.width, 'height': self.height,
-                      'x': self.x, 'y': self.y}
+                'x': self.x, 'y': self.y}
         return dcty

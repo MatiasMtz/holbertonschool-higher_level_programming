@@ -5,6 +5,7 @@ Unittest for Square class
 import unittest
 from models.square import Square
 
+
 class TestSquare(unittest.TestCase):
     """
     Tests ractangle class
@@ -19,12 +20,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sq.x, 2)
         self.assertEqual(sq.y, 3)
         self.assertEqual(sq.id, 4)
-        
+
         sq = Square(1)
         self.assertEqual(sq.size, 1)
         self.assertEqual(sq.x, 0)
         self.assertEqual(sq.y, 0)
-        self.assertEqual(sq.id, 4) 
+        self.assertEqual(sq.id, 4)
 
     def test_Errors(self):
         """
@@ -49,17 +50,16 @@ class TestSquare(unittest.TestCase):
         """
         Test area method
         """
-        
+
         sq = Square(1)
         self.assertEqual(sq.area(), 1)
-        sq = Square(6, 3, 4 ,5)
+        sq = Square(6, 3, 4, 5)
         self.assertEqual(sq.area(), 36)
 
     def test_print(self):
         """
         Test __str__ method
         """
-        
         sq = Square(1, 3, 4, 5)
         self.assertEqual(str(sq), '[Square] (5) 3/4 - 1')
 
@@ -67,7 +67,6 @@ class TestSquare(unittest.TestCase):
         """
         Test update method
         """
-        
         sq = Square(1, 2, 3, 4)
         sq.update(3, 3, 3, 3)
         self.assertEqual(str(sq), '[Square] (3) 3/3 - 3')

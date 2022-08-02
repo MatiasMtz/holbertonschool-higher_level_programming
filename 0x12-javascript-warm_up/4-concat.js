@@ -5,13 +5,13 @@ let first;
 let second;
 
 if (argv[2] === undefined) {
-	first = 'undefined';
+  first = 'undefined';
 } else {
-	first = argv[2];
+  first = argv[2];
 }
 if (argv[3] === undefined) {
-	second = 'undefined';
+  second = 'undefined';
 } else {
-	second = argv[3];
+  second = argv[3];
 }
 console.log(`${first} is ${second}`);

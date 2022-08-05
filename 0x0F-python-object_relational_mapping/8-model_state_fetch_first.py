@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database hbtn_0e_6_usa"""
+"""script that prints the first State object from the database hbtn_0e_6_usa"""
 
 if __name__ == "__main__":
     """Access to db and get the values"""
@@ -17,5 +17,9 @@ if __name__ == "__main__":
     session = Session()
 
     # Obtaining Query Results
-    for result in session.query(State).order_by(State.id):
-        print("{}: {}".format(result.id, result.name))
+    query = session.query(State).order_by(State.id).first()
+
+    if query is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(query.id, query.name))

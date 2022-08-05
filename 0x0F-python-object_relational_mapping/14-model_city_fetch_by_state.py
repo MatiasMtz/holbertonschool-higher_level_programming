@@ -5,6 +5,7 @@ hbtn_0e_6_usa"""
 if __name__ == "__main__":
     """Access to db and get the values"""
     from model_state import Base, State
+    from model_city import City
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     from sys import argv
@@ -17,9 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    # Update record
-    for query in session.query(State).filter(State.name.contains('a')):
-        session.delete(query)
+    # Obtaining Query Results
+    query = session.query(City, State).join(State)
+    for city, state in query.all():
+        print("{}: ({:d}) {}".format(state.name, city.id, city.name))
     session.commit()
 
     session.close()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that deletes all State objects with a name containing 
+"""script that deletes all State objects with a name containing
 the letter a from the database hbtn_0e_6_usa"""
 
 if __name__ == "__main__":

@@ -24,3 +24,5 @@ if __name__ == "__main__":
 
     # Print states.id after creation
     print("{}".format(newState.id))
+
+    session.close()

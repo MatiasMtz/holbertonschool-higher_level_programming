@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that lists all State objects that contain the letter a
-from the database hbtn_0e_6_usa"""
+"""script that adds the State object “Louisiana” to the database
+hbtn_0e_6_usa"""
 
 if __name__ == "__main__":
     """Access to db and get the values"""
@@ -18,7 +18,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Obtaining Query Results
-    for result in session.query(State).filter(State.name.contains("a")):
-        print("{}: {}".format(result.id, result.name))
+    query = session.query(State).filter(State.id == '2').first()
+    query.name = "New Mexico"
+    session.commit()
 
     session.close()

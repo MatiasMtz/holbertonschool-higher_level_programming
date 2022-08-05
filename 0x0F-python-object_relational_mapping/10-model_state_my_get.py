@@ -24,3 +24,5 @@ if __name__ == "__main__":
         print("Not found")
     else:
         print("{}".format(query.id))
+
+    session.close()

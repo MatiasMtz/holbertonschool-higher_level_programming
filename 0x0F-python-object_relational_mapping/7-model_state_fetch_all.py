@@ -19,5 +19,5 @@ if __name__ == "__main__":
     # Obtaining Query Results
     for result in session.query(State).order_by(State.id):
         print("{}: {}".format(result.id, result.name))
-    
+
     session.close()

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""script that lists all states from the database hbtn_0e_0_usa"""
+"""script that lists all cities with respective id and state from the database
+hbtn_0e_4_usa"""
 
 if __name__ == "__main__":
     """Access to db and get the values"""

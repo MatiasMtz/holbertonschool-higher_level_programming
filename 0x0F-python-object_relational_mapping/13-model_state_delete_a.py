@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that adds the State object “Louisiana” to the database
-hbtn_0e_6_usa"""
+"""script that deletes all State objects with a name containing 
+the letter a from the database hbtn_0e_6_usa"""
 
 if __name__ == "__main__":
     """Access to db and get the values"""

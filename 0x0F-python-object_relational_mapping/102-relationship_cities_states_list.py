@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""script that creates the State “California” with the City “San Francisco”
-from the database hbtn_0e_100_usa"""
+"""script that lists all City objects from the database hbtn_0e_101_usa"""
 
 if __name__ == "__main__":
     """Access to db and get the values"""
@@ -20,12 +19,8 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    # New State and city
-    newState = State(name='California')
-    newCity = City(name='San Francisco')
-    newState.cities.append(newCity)
-    session.add(newState)
-    session.add(newCity)
-    session.commit()
-
-    session.close()
+# Obtaining Query Results
+    query = session.query(State).join(City).order_by(City.id).all()
+    for state in query:
+        for city in state.cities:
+            print("{}: {} -> {}".format(city.id, city.name, state.name))

@@ -16,14 +16,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Executing MySQL Queries in Python
-    cur.execute("SELECT * FROM states WHERE name='{:s}' \
-                 ORDER BY states.id ASC".format(argv[4],))
+    cur.execute("SELECT * FROM states WHERE name=%s \
+                 ORDER BY states.id ASC", [argv[4]])
 
     # Obtaining Query Results
     rows = cur.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
 
     # Clean up
     cur.close()

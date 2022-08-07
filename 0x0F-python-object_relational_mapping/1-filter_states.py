@@ -16,7 +16,8 @@ if __name__ == "__main__":
 
     # Executing MySQL Queries in Python
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+            ORDER BY states.id ASC")
 
     # Obtaining Query Results
     rows = cur.fetchall()

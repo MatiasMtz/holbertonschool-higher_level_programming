@@ -15,13 +15,14 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Executing MySQL Queries in Python
-    cur.execute("SELECT * FROM states WHERE name = '{}' \
+    cur.execute("SELECT * FROM states WHERE name LIKE '{}' \
                  ORDER BY states.id ASC".format(argv[4]))
 
     # Obtaining Query Results
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     # Clean up
     cur.close()

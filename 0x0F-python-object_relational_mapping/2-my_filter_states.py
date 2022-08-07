@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Executing MySQL Queries in Python
-    cur.execute("SELECT * FROM states WHERE name LIKE '{}' \
+    cur.execute("SELECT * FROM states WHERE name = '{}' \
                  ORDER BY states.id ASC".format(argv[4]))
 
     # Obtaining Query Results

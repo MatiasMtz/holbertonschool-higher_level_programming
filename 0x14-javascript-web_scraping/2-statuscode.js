@@ -7,6 +7,6 @@ axios.get(args[0])
   .then(function (response) {
     console.log('code: ', response.status);
   })
-  .catch(error => {
+  .catch(function (error) {
     console.log('code:', error.response.status);
   });

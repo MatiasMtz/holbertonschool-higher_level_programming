@@ -8,5 +8,5 @@ axios.get(args[0])
     console.log('code: ', response.status);
   })
   .catch(function (error) {
-    console.log('code:', error.response.status);
+    console.log('code: ', error.response.status);
   });
